@@ -7,10 +7,7 @@ Repo: https://github.com/sebastian9486/prometheus-grafana
 * Prometheus -> http://localhost:9090/status | http://localhost:9090/metrics
 * Grafana -> http://localhost:3000
 
-== Prometheus
-=== Check Config (prometheus.yml)
-See https://www.robustperception.io/how-to-check-your-prometheus-yml-is-valid
+== Links
 
-== Grafana
-=== Dashboards
-See https://grafana.com/grafana/dashboards
+* Check Config (prometheus.yml) -> See https://www.robustperception.io/how-to-check-your-prometheus-yml-is-valid
+* Grafana Dashboards -> See https://grafana.com/grafana/dashboards
