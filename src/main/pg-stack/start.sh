@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # load common vars
-source vars.sh
+source ./vars.sh
 
 echo -e "$LOG_INFO starting containers"
 docker-compose up -d

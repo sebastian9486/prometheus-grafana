@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # load common vars
-source vars.sh
+source ./vars.sh
 
 echo -e "$LOG_INFO shutting down"
 docker-compose down -v
