@@ -10,4 +10,4 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       # - targets: ['node-exporter:9100']
-      - targets: ['rinzler:9100', 'hal:9100', 'tron:9100']
+      - targets: ['rinzler:9100', 'hal:9100', 'tron:9100', 'kobol:9100']

@@ -1,4 +1,4 @@
-version: '3.3'
+version: "3.3"
 services:
 
   prometheus:
@@ -11,13 +11,13 @@ services:
       - "--config.file=/etc/prometheus/prometheus.yml"
       # - "-storage.local.path=/prometheus"
     ports:
-      - '9090:9090'
+      - "9090:9090"
 
   # node-exporter:
   #   image: prom/node-exporter:latest
   #   container_name: pg_stack_node_exporter
   #   ports:
-  #     - '9100:9100'
+  #     - "9100:9100"
 
   grafana:
     image: grafana/grafana:latest
