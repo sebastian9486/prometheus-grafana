@@ -5,7 +5,7 @@ services:
     image: prom/prometheus:latest
     container_name: pg_stack_promentheus
     volumes:
-      - "./resources/config/prometheus.yml:/etc/prometheus/prometheus.yml:rw"
+      - "./resources/config/prometheus.yml:/etc/prometheus/prometheus.yml:ro"
       - pg_stack_prometheus_data:/prometheus
     command:
       - "--config.file=/etc/prometheus/prometheus.yml"
@@ -24,9 +24,11 @@ services:
     container_name: pg_stack_grafana
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_AUTH_ANONYMOUS_ENABLED=true
     depends_on:
       - prometheus
     volumes:
+      - "./resources/config/grafana/provisioning:/etc/grafana/provisioning:ro"
       - pg_stack_grafana_data:/var/lib/grafana
     ports:
       - "3000:3000"
