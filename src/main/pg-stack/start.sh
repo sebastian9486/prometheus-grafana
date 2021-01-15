@@ -9,6 +9,3 @@ docker-compose up -d
 echo -e "$LOG_INFO ------------------------------------------------------------------"
 echo -e "$LOG_INFO startup in progress (detached)"
 echo -e "$LOG_INFO ------------------------------------------------------------------"
-
-echo -e "$LOG_INFO showing logs"
-docker-compose logs -f
