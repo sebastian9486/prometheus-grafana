@@ -11,6 +11,7 @@ scrape_configs:
     static_configs:
       # - targets: ['node-exporter:9100']
       - targets: ['rinzler:9100', 'hal:9100', 'tron:9100', 'kobol:9100']
-  - job_name: 'docker-metrics'
+  - job_name: cadvisor
+    scrape_interval: 5s
     static_configs:
-      - targets: ['rinzler:9417', 'hal:9417', 'tron:9417', 'kobol:9417']
+      - targets: ['rinzler:9110', 'hal:9110', 'tron:9110', 'kobol:9110']
