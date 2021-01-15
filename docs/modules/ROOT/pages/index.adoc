@@ -1,3 +1,12 @@
 = Prometheus + Grafana Stack Docs
 
 Repo: https://github.com/sebastian9486/prometheus-grafana
+
+== Check Running containers
+
+* Prometheus
+** http://localhost:9090/status
+** http://localhost:9090/metrics
+
+== Check Prometheus Config (prometheus.yml)
+See https://www.robustperception.io/how-to-check-your-prometheus-yml-is-valid
