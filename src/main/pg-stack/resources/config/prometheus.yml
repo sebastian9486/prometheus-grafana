@@ -3,7 +3,10 @@ global:
   external_labels:
     monitor: 'pg_stack'
 scrape_configs:
-  - job_name: 'node'
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+  - job_name: 'node-information'
     scrape_interval: 5s
     static_configs:
       - targets: ['rinzler:9100', 'hal:9100', 'tron:9100', 'kobol:9100']
