@@ -5,6 +5,7 @@ Repo: https://github.com/sebastian9486/prometheus-grafana
 == Containers
 
 * Prometheus -> http://localhost:9090/status | http://localhost:9090/metrics
+* Node Exporter -> http://localhost:9090/metrics
 * Grafana -> http://localhost:3000
 
 == Links
