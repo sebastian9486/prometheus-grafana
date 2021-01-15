@@ -1,0 +1,6 @@
+name: prometheus-grafana-docs
+title: Prometheus + Grafana Docs
+version: master
+start_page: ROOT:index.adoc
+nav:
+- modules/ROOT/nav.adoc

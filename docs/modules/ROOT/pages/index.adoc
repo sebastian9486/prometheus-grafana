@@ -1,0 +1,5 @@
+= Prometheus + Grafana Stack Docs
+
+Repo: https://github.com/sebastian9486/prometheus-grafana
+
+xref:docs/modules/ROOT/pages/index.adoc[See Prometheus + Grafana Stack]
