@@ -4,6 +4,7 @@ services:
   prometheus:
     image: prom/prometheus:latest
     container_name: pg_stack_promentheus
+    restart: unless-stopped
     volumes:
       - "./resources/config/prometheus.yml:/etc/prometheus/prometheus.yml:ro"
       - pg_stack_prometheus_data:/prometheus
@@ -22,6 +23,7 @@ services:
   grafana:
     image: grafana/grafana:latest
     container_name: pg_stack_grafana
+    restart: unless-stopped
     environment:
       - F_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin
