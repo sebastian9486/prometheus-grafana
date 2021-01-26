@@ -12,7 +12,7 @@
       }
     ]
   },
-  "description": "Blackbox exporter HTTP prober dashboard",
+  "description": "Blackbox Exporter HTTP Prober Dashboard",
   "editable": true,
   "gnetId": 13659,
   "graphTooltip": 0,
