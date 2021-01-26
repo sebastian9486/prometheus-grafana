@@ -29,7 +29,7 @@ services:
     depends_on:
       - prometheus
     volumes:
-      - "./resources/config/grafana/provisioning:/etc/grafana/provisioning:ro"
+      - "./resources/provisioning/grafana:/etc/grafana/provisioning:ro"
       - pg_stack_grafana_data:/var/lib/grafana
     ports:
       - "3000:3000"
