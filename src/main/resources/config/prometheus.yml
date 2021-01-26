@@ -15,7 +15,7 @@ scrape_configs:
       - targets: ['rinzler:9110', 'hal:9110', 'tron:9110', 'kobol:9110']
         labels:
           group: "docker-metrics"
-  - job_name: 'portainer'
+  - job_name: 'blackbox-portainer'
     metrics_path: /probe
     params:
       module: [http_2xx]  # Look for a HTTP 200 response.
