@@ -21,7 +21,6 @@ scrape_configs:
       module: [http_2xx]  # Look for a HTTP 200 response.
     static_configs:
       - targets:
-        # portainer
         - "http://kobol:9990"
         - "http://hal:9990"
         - "http://rinzler:9990"
