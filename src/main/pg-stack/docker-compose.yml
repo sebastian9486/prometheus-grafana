@@ -34,6 +34,19 @@ services:
     ports:
       - "3000:3000"
 
+  blackbox_exporter:
+    image: prom/blackbox-exporter
+    container_name: pg_stack_blackbox_exporter
+    ports:
+      - "9115:9115"
+    restart: unless-stopped
+    ports:
+      - "9115:9115"
+    volumes:
+      - "./resources/config/blackbox-exporter.yml:/etc/prometheus/blackbox-exporter.yml:ro"
+    command:
+      - "--config.file=/etc/prometheus/blackbox-exporter.yml"
+
 volumes:
   pg_stack_prometheus_data:
   pg_stack_grafana_data:

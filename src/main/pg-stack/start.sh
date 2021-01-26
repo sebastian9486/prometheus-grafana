@@ -1,5 +1,7 @@
 #!/bin/bash
 
+clear
+
 # load common vars
 source ./vars.sh
 
