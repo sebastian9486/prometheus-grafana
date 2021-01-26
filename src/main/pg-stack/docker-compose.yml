@@ -1,6 +1,10 @@
 version: "3.3"
 services:
 
+################################################################################
+#    prometheus + grafana                                                      #
+################################################################################
+
   prometheus:
     image: prom/prometheus:latest
     container_name: pg_stack_promentheus
@@ -13,12 +17,6 @@ services:
       # - "-storage.local.path=/prometheus"
     ports:
       - "9090:9090"
-
-  # node-exporter:
-  #   image: prom/node-exporter:latest
-  #   container_name: pg_stack_node_exporter
-  #   ports:
-  #     - "9100:9100"
 
   grafana:
     image: grafana/grafana:latest
