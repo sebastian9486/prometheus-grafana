@@ -6,6 +6,9 @@ scrape_configs:
   - job_name: 'prometheus'
     static_configs:
       - targets: ['localhost:9090']
+  ##############################################################################
+  #    node exporter                                                           #
+  ##############################################################################
   - job_name: 'node-information'
     scrape_interval: 5s
     static_configs:
@@ -15,6 +18,9 @@ scrape_configs:
       - targets: ['rinzler:9110', 'hal:9110', 'tron:9110', 'kobol:9110']
         labels:
           group: "docker-metrics"
+  ##############################################################################
+  #    blackbox exporter                                                       #
+  ##############################################################################
   - job_name: 'blackbox-portainer'
     metrics_path: /probe
     params:
@@ -25,6 +31,20 @@ scrape_configs:
         - "http://hal:9990"
         - "http://rinzler:9990"
         - "http://tron:9990"
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: pg_stack_blackbox_exporter:9115  # Container Name
+  - job_name: 'blackbox-jenkins'
+    metrics_path: /probe
+    params:
+      module: [http_2xx]  # Look for a HTTP 200 response.
+    static_configs:
+      - targets:
+        - "http://rinzler:9080"
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
