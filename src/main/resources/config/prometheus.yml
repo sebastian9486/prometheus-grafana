@@ -37,11 +37,11 @@ scrape_configs:
       - source_labels: [__param_target]
         target_label: instance
       - target_label: __address__
-        replacement: pg_stack_blackbox_exporter:9115  # Container Name
+        replacement: pg_stack_blackbox_exporter:9115
   - job_name: 'blackbox-jenkins'
     metrics_path: /probe
     params:
-      module: [http_2xx]  # Look for a HTTP 200 response.
+      module: [http_2xx]
     static_configs:
       - targets:
         - "http://rinzler:9080"
@@ -51,4 +51,4 @@ scrape_configs:
       - source_labels: [__param_target]
         target_label: instance
       - target_label: __address__
-        replacement: pg_stack_blackbox_exporter:9115  # Container Name
+        replacement: pg_stack_blackbox_exporter:9115
