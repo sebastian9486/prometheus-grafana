@@ -2,6 +2,8 @@
 
 Repo: https://github.com/sebastian9486/prometheus-grafana
 
+Available Exporters: https://prometheus.io/docs/instrumenting/exporters/
+
 == Containers
 
 * Prometheus -> http://localhost:9090/status | http://localhost:9090/metrics
