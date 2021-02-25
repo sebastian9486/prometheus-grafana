@@ -15,7 +15,7 @@ scrape_configs:
       - targets: ['kobol:9100', 'prometheus:9100', 'k8s-master:9100', 'k8s-worker-1:9100', 'k8s-worker-2:9100', 'garfield:9100']
         labels:
           group: "node-metrics"
-      - targets: ['kobol:9100', 'prometheus:9100', 'k8s-master:9100', 'k8s-worker-1:9100', 'k8s-worker-2:9100', 'garfield:9100']
+      - targets: ['kobol:9110', 'prometheus:9110', 'k8s-master:9110', 'k8s-worker-1:9110', 'k8s-worker-2:9110', 'garfield:9110']
         labels:
           group: "docker-metrics"
   ##############################################################################
