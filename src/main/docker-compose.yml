@@ -5,13 +5,13 @@ services:
 #    prometheus + grafana                                                      #
 ################################################################################
 
-  prometheus:
+  prometheus_server:
     image: prom/prometheus:latest
-    container_name: promentheus
+    container_name: prometheus_server
     restart: unless-stopped
     volumes:
       - "./resources/config/prometheus.yml:/etc/prometheus/prometheus.yml:ro"
-      - pg_stack_prometheus_data:/prometheus
+      - prometheus_data:/prometheus
     command:
       - "--config.file=/etc/prometheus/prometheus.yml"
       # - "-storage.local.path=/prometheus"
@@ -27,10 +27,10 @@ services:
       - GF_SECURITY_ADMIN_PASSWORD=admin
       - GF_AUTH_ANONYMOUS_ENABLED=true
     depends_on:
-      - prometheus
+      - prometheus_server
     volumes:
       - "./resources/provisioning/grafana:/etc/grafana/provisioning:ro"
-      - pg_stack_grafana_data:/var/lib/grafana
+      - grafana_data:/var/lib/grafana
     ports:
       - "3000:3000"
 
@@ -46,5 +46,5 @@ services:
       - "--config.file=/etc/prometheus/blackbox-exporter.yml"
 
 volumes:
-  pg_stack_prometheus_data:
-  pg_stack_grafana_data:
+  prometheus_data:
+  grafana_data:
